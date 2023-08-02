@@ -1,16 +1,14 @@
 import "./product.css"
 import QuantityPicker from "../QuantityPicker";
 
-const Product = ({ name, price, image }) => {
-
-    console.log(image)
+const Product = ({ product }) => {
     return (
         <div className="product">
-            <img src={image} alt={`miss-${name}`}></img>
-            <h5>{name}</h5>
+            <img src={"/assets/images/" + product.image} alt={`missing-${product.title}`}></img>
+            <h5>{product.title}</h5>
             <div className="prices">
-                <label>{`Price: $ ${price}`}</label>
-                <label>{`Total: $ ${price}`}</label>
+                <label>{`Price: $ ${product.price}`}</label>
+                <label>{`Total: $ ${product.price}`}</label>
             </div>
             <QuantityPicker />
         </div>

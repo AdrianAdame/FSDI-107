@@ -4,60 +4,64 @@ const catalog = [
         "title": "Orange",
         "category":"Fruit",
         "price": 12.99,
-        "image": "./public/assets/images/orange.png",
+        "image": "orange.png",
         "_id" : 1
     },
     {
         "title": "Apple",
         "category":"Fruit",
         "price": 12.99,
-        "image": "./../public/assets/images/orange.png",
-        "_id" : 1
+        "image": "apple.png",
+        "_id" : 2
     },
     {
         "title": "Carrot",
         "category":"Fruit",
         "price": 12.99,
-        "image": "./../public/assets/images/orange.png",
-        "_id" : 1
+        "image": "carrot.png",
+        "_id" : 3
     },
     {
         "title": "Banana",
         "category":"Fruit",
         "price": 12.99,
-        "image": "./../public/assets/images/orange.png",
-        "_id" : 1
+        "image": "banana.png",
+        "_id" : 4
     },
     {
         "title": "Watermelon",
         "category":"Fruit",
         "price": 12.99,
-        "image": "./../public/assets/images/orange.png",
-        "_id" : 1
+        "image": "watermelon.png",
+        "_id" : 5
     },
     {
         "title": "Melon",
         "category":"Fruit",
         "price": 12.99,
-        "image": "./../public/assets/images/orange.png",
-        "_id" : 1
+        "image": "melon.png",
+        "_id" : 6
     },
     {
         "title": "Grapes",
         "category":"Fruit",
         "price": 12.99,
-        "image": "./../public/assets/images/orange.png",
-        "_id" : 1
+        "image": "grapes.png",
+        "_id" : 7
     },
     {
         "title": "Cereal",
         "category":"Fruit",
         "price": 24.99,
-        "image": "./../public/assets/images/orange.png",
-        "_id" : 1
+        "image": "cereal.png",
+        "_id" : 8
     }
 ]
 
-module.exports = {
-    catalog
+class DataService {
+    getProducts = () => {
+        return catalog
+    }
 }
+
+export default DataService;
