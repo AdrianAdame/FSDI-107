@@ -51,7 +51,7 @@ const catalog = [
     },
     {
         "title": "Cereal",
-        "category":"Fruit",
+        "category":"Groceries",
         "price": 24.99,
         "image": "cereal.png",
         "_id" : 8

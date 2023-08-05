@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    Navbar
+                    Marketla
                 </a>
                 <button
                 className="navbar-toggler"
@@ -28,12 +28,12 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">
-                                Link
+                                All Catalog
                             </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link disabled" aria-disabled="true">
-                                Disabled
+                                Secret section
                             </a>
                         </li>
                     </ul>
@@ -41,7 +41,7 @@ const Navbar = () => {
                         <input
                         className="form-control me-2"
                         type="search"
-                        placeholder="Search"
+                        placeholder="Search product..."
                         aria-label="Search"
                         />
                         <button className="btn btn-outline-success" type="submit">
