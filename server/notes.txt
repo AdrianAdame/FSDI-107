@@ -1,0 +1,18 @@
+#Install virtual environment tool
+pip install virtualenv
+
+#Create a vritual environment
+python -m venv {name}
+
+#Activate virtual environment
+mac / linux:
+    source {name}/bin/activate
+
+Windows:
+    {name}\scripts\activate
+
+#Deactivate
+    deactivate
+
+#Installs
+1.- pip install flask
