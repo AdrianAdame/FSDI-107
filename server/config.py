@@ -13,4 +13,4 @@ myData = {
 
 #Database configuration
 
-mongodb_conn_str = os.getenv('MONGODB_CONN_STRING')
+CONN_STR = os.getenv('MONGODB_CONN_STRING')
