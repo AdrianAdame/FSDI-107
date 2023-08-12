@@ -1,6 +1,9 @@
 import os
 from dotenv import load_dotenv
 
+import pymongo
+import certifi
+
 load_dotenv()
 
 myData = {
@@ -14,3 +17,14 @@ myData = {
 #Database configuration
 
 CONN_STR = os.getenv('MONGODB_CONN_STRING')
+
+DB_NAME = "marketla"
+
+client = pymongo.MongoClient(CONN_STR, tlsCAFile = certifi.where())
+
+db = client.get_database(DB_NAME)
+
+
+
+
+
