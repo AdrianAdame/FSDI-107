@@ -15,7 +15,6 @@ const Catalog = () => {
         return {products, cat}
     }
 
-    
     const filter = (category) => {
         let allProducts = products
         let matchedProducts = allProducts.filter(p => p.category === category)

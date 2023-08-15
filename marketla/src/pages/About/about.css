@@ -1,0 +1,15 @@
+.about {
+    min-height: 350px;
+    padding-top: 150px;
+    background-color: #a0b5c4;
+}
+
+.about h5 {
+    text-align: center;
+    color: #7a7a7a;
+}
+
+.about h1 {
+    text-align: center;
+    color: darkblue;
+}
