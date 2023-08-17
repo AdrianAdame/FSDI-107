@@ -1,0 +1,19 @@
+.admin {
+    padding-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 48px;
+}
+
+.admin .parent-container {
+    width: 350px;
+    border: 1px solid #bdbaba;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: white;
+
+    text-align: left;
+}

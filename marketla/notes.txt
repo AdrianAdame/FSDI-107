@@ -1,0 +1,20 @@
+# git
+
+# initialize a folder as a git repo
+git init
+
+# setup the remove URL
+git remote add <REMOTE_NAME> <ULR>
+
+
+### Push the first time
+# crate a commit
+git add .
+git commit -m "ANY MESSAGE"
+git push -u <REMOTE_NAME> <BRANCH_NAME>
+
+
+### Push future times
+git add .
+git commit -m "ANY Message"
+git push
