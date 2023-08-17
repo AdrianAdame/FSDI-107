@@ -3,7 +3,7 @@ import "./home.css"
 
 const Home = () => {
     return (
-        <div className = "home">
+        <div className = "home page">
             <h1>Welcome to my super online store!</h1>
 
             <Link className="btn btn-primary" to="/catalog">

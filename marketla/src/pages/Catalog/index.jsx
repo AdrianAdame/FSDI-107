@@ -34,7 +34,7 @@ const Catalog = () => {
     }, [])
     
     return(
-        <div className="catalog">
+        <div className="catalog page">
             <h1>Check out our {products.length} amazing products in our catalog</h1>
             <button onClick={clearFilter} className="btn btn-sm btn-success m-2">Clear Filters</button>
             {categories.length > 0 ? (

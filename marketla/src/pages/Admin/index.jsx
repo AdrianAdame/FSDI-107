@@ -1,7 +1,7 @@
 import "./admin.css";
 
 const Admin = () => {
-    return <div>This is an admin page</div>;
+    return <div className="admin page">This is an admin page</div>;
 };
 
 export default Admin;
