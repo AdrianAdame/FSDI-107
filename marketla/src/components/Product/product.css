@@ -24,3 +24,7 @@
 
     aspect-ratio: 1;
 }
+
+.product .add {
+    width: 100%;
+}
