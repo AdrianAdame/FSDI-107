@@ -19,6 +19,8 @@ const Product = ({ product }) => {
         }
 
         addToCart(prodWithQty)
+        setQuantity(1)
+
     }
 
     const getPrice = () => {

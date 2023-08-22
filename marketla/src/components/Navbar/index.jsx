@@ -8,6 +8,12 @@ const Navbar = () => {
     const user = useContext(DataContext).user;
     const cart = useContext(DataContext).cart;
 
+    const getProductCount = () => {
+        let sum = 0;
+        cart.forEach(prod => sum += prod.quantity);
+        return sum;
+    }
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -47,7 +53,7 @@ const Navbar = () => {
                     </ul>
                     <form className="d-flex">
                         <Link type="button" className="btn btn-primary" to="/cart" style={{marginRight : '6px'}}>
-                            <span className="badge bg-danger"><i className="fa-solid fa-cart-shopping"></i> {cart.length}</span>
+                            <span className="badge bg-danger"><i className="fa-solid fa-cart-shopping"></i> {getProductCount()}</span>
                             {" Cart"}
                         </Link>
                         <Link
