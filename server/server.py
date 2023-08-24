@@ -1,5 +1,6 @@
 #Module imports
-from flask import Flask, request
+from flask import Flask, abort, request
+from bson import ObjectId
 import json
 
 #Custom imports
@@ -133,6 +134,71 @@ def calculate_products_total():
 
     return json.dumps(total)
 
+
+
+@app.get(create_api_endpoint("/coupons"))
+def get_coupons():
+    results = []
+    cursor = db.coupons.find({})
+    for coupon in cursor:
+        results.append(fix_id(coupon))
+    return json.dumps(results)
+
+@app.post(create_api_endpoint("/coupons"))
+def save_coupon():
+    coupon = request.get_json()
+
+    #There must be a code
+    #There must be a discount
+    #The discount can't be bigger than 35%
+
+    if not "code" in coupon:
+        return abort(404, "Coupon title is missing")
+
+    if not "discount" in coupon:
+        return abort(404, "Discount is not provided")
+
+    if coupon["discount"] > 35:
+        return abort(400, "Discount must be lower than 35% !")
+
+    db.coupons.insert_one(coupon)
+    return json.dumps(fix_id(coupon))
+
+@app.get(create_api_endpoint("/coupons/code/<code>"))
+def get_coupon_code(code):
+    coupon = db.coupons.find_one({"code" : code})
+
+    if not coupon:
+        return abort(404, "Coupon not found")
+    
+    return json.dumps(fix_id(coupon))
+
+@app.get(create_api_endpoint("/coupons/id/<id>"))
+def get_coupon_id(id):
+    if not ObjectId.is_valid(id):
+        return abort(400, "Invalid id")
+
+    obj_id = ObjectId(id)
+    coupon = db.coupons.find_one({"_id" : obj_id})
+
+    if not coupon:
+        return abort(404, "Coupon not found")
+    
+    return json.dumps(fix_id(coupon))
+
+@app.get(create_api_endpoint("/products/id/<id>"))
+def get_product(id):
+    if not ObjectId.is_valid(id):
+        return abort(400, "Invalid Id")
+    
+    db_id = ObjectId(id)
+
+    product = db.products.find_one({"_id" : db_id})
+
+    if not product:
+        abort(404, "Product not found")
+    
+    return json.dumps(fix_id(product))
 
 # Start the server
 app.run(debug=True)
