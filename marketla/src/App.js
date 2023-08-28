@@ -15,21 +15,22 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Admin from "./pages/Admin";
 import GlobalState from "./store/globalState";
+import Layout from "./components/Layout";
 
 const App = () => {
     return (
         <div className="App">
             <GlobalState>
                 <BrowserRouter>
-                    <Navbar />
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/catalog" element={<Catalog />} />
-                        <Route path="/admin" element={<Admin />} />
-                        <Route path="/cart" element={<Cart />} />
+                        <Route path = "/" element={<Layout />}>
+                            <Route path="/about" element={<About />} />
+                            <Route path="/catalog" element={<Catalog />} />
+                            <Route path="/admin" element={<Admin />} />
+                            <Route path="/cart" element={<Cart />} />
+                        </Route>
                     </Routes>
-                    <Footer />
                 </BrowserRouter>
             </GlobalState>
         </div>

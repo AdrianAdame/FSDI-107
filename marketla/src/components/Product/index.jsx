@@ -34,18 +34,30 @@ const Product = ({ product }) => {
     }
 
     return (
-        <div className="product">
-            <img
-                src={"/assets/images/" + product.image}
-                alt={`missing-${product.title}`}
-            ></img>
-            <h5>{product.title}</h5>
-            <div className="prices">
-                <label>{`Price: $ ${getPrice()}`}</label>
-                <label>{`Total: $ ${getTotal()}`}</label>
+        <div class="col">
+            <div class="card h-100">
+                <img
+                    src={"/assets/images/" + product.image}
+                    alt={`missing-${product.title}`}
+                    className="card-img-top h-100"
+                ></img>
+                <div className="card-body">
+                    <h5 class="card-title">{product.title}</h5>
+                    <div className="prices">
+                        <label>{`Price: $ ${getPrice()}`}</label>
+                    </div>
+                    <QuantityPicker onChange={handleQuantityChange} />
+                    <button
+                        className="add btn btn-success mt-3"
+                        onClick={handleAddToCart}
+                    >
+                        Add to Cart
+                    </button>
+                </div>
+                <div className="card-footer">
+                    <label>{`Total: $ ${getTotal()}`}</label>
+                </div>
             </div>
-            <QuantityPicker onChange={handleQuantityChange} />
-            <button className="add btn btn-success mt-3" onClick={handleAddToCart}>Add to Cart</button>
         </div>
     );
 };

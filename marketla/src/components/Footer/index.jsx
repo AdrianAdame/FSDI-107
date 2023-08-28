@@ -30,7 +30,7 @@ const Footer = () => {
                     </Link>
                 </li>
             </ul>
-            <p className="text-center text-muted">© 2023 Marketla, Inc</p>
+            <p className="text-center text-muted">© 2023 Climbingio, Inc</p>
         </footer>
     );
 }

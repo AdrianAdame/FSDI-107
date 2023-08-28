@@ -18,7 +18,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
-                    Marketla
+                    Climbingio
                 </Link>
                 <button
                     className="navbar-toggler"
@@ -52,15 +52,24 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <form className="d-flex">
-                        <Link type="button" className="btn btn-primary" to="/cart" style={{marginRight : '6px'}}>
-                            <span className="badge bg-danger"><i className="fa-solid fa-cart-shopping"></i> {getProductCount()}</span>
+                        <Link
+                            type="button"
+                            className="btn btn-primary"
+                            to="/cart"
+                            style={{ marginRight: "6px" }}
+                        >
+                            <span className="badge bg-danger">
+                                <i className="fa-solid fa-cart-shopping"></i>{" "}
+                                {getProductCount()}
+                            </span>
                             {" Cart"}
                         </Link>
                         <Link
                             className="btn btn-outline-dark ml-2"
                             to="/my-profile"
                         >
-                            <i className="fa-solid fa-user"></i> {` ${user.name}`}
+                            <i className="fa-solid fa-user"></i>{" "}
+                            {` ${user.name}`}
                         </Link>
                     </form>
                 </div>

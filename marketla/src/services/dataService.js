@@ -1,61 +1,47 @@
 //At least 8 products
 const catalog = [
     {
-        "title": "Orange",
-        "category":"Fruit",
-        "price": 12.99,
-        "image": "orange.png",
+        "title": "Woods Backpack",
+        "category":"Backpacks",
+        "price": 79.99,
+        "image": "woods.jpg",
         "_id" : 1
     },
     {
-        "title": "Apple",
-        "category":"Fruit",
-        "price": 12.99,
-        "image": "apple.png",
+        "title": "Maloga Coat",
+        "category":"Clothing",
+        "price": 59.99,
+        "image": "orange_coat.jpg",
         "_id" : 2
     },
     {
-        "title": "Carrot",
-        "category":"Fruit",
-        "price": 12.99,
-        "image": "carrot.png",
+        "title": "Salomon Hiking shoes",
+        "category":"Shoes",
+        "price": 44.99,
+        "image": "salomon.jpg",
         "_id" : 3
     },
     {
-        "title": "Banana",
-        "category":"Fruit",
-        "price": 12.99,
-        "image": "banana.png",
+        "title": "Knife",
+        "category":"Accesories",
+        "price": 24.99,
+        "image": "knife.jpg",
         "_id" : 4
     },
     {
-        "title": "Watermelon",
-        "category":"Fruit",
-        "price": 12.99,
-        "image": "watermelon.png",
+        "title": "Cimalp jacket",
+        "category":"Clothing",
+        "price": 59.99,
+        "image": "yellow_coat.jpg",
         "_id" : 5
     },
     {
-        "title": "Melon",
-        "category":"Fruit",
-        "price": 12.99,
-        "image": "melon.png",
+        "title": "Black backpack",
+        "category":"Backpacks",
+        "price": 39.99,
+        "image": "black_back.jpg",
         "_id" : 6
     },
-    {
-        "title": "Grapes",
-        "category":"Fruit",
-        "price": 12.99,
-        "image": "grapes.png",
-        "_id" : 7
-    },
-    {
-        "title": "Cereal",
-        "category":"Groceries",
-        "price": 24.99,
-        "image": "cereal.png",
-        "_id" : 8
-    }
 ]
 
 class DataService {
