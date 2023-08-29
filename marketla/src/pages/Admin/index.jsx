@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./admin.css";
+import DataService from "../../services/dataService";
 
 const Admin = () => {
+    const service = new DataService()
+
+    const [products, setProducts] = useState([])
+
     const [product, setProduct] = useState({
         title: "",
         category: "",
-        image: "",
         price: "",
+        image: "",
     });
 
     const handleInputChange = (e) => {
@@ -20,14 +25,30 @@ const Admin = () => {
     };
 
     const saveProduct = () => {
-        console.log(product);
+        let copy = {...product}
+
+        copy.price = Number(copy.price)
+
+        service.saveProduct(copy)
 
         clearForm();
+
+        loadProducts()
     };
 
     const clearForm = () => {
         setProduct({ title: "", category: "", image: "", price: "" });
     };
+
+    const loadProducts = async() => {
+        let prods = await service.getProducts()
+
+        setProducts(prods)
+    }
+
+    useEffect(() => {
+        loadProducts()
+    }, [])
 
     return (
         <div className="admin page">
@@ -96,6 +117,14 @@ const Admin = () => {
                         Save Product
                     </button>
                 </div>
+            </div>
+
+            <div className="all-products">
+                <ul>
+                {products.length > 0 ? (products.map((prod) => (
+                    <li>{`${prod.title} : ${prod.price}`} <button>Delete product</button></li>
+                    ))) : ('No products in DB!')}
+                </ul>
             </div>
         </div>
     );

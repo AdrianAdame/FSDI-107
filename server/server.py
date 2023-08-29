@@ -3,10 +3,14 @@ from flask import Flask, abort, request
 from bson import ObjectId
 import json
 
+from flask_cors import CORS
+
 #Custom imports
 from config import myData, db
 
 app = Flask("Server")
+
+CORS(app) # THIS LINE WILL REMOVE CORS POLICY
 
 BASE_API_URL = "/api"
 

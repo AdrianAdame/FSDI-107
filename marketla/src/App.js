@@ -7,8 +7,6 @@ import "./App.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Catalog from "./pages/Catalog";
 import Home from "./pages/Home";
 import About from "./pages/About";

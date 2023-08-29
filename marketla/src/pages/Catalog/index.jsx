@@ -8,11 +8,16 @@ const Catalog = () => {
     const [categories, setCategories] = useState([])
     const [productsToDisplay, setProductsToDisplay] = useState([])
 
-    const loadCatalog = () => {
+    const loadCatalog = async () => {
         let service = new DataService()
-        let products = service.getProducts() || []
-        let cat = ['Backpacks', 'Clothing', 'Shoes', 'Accesories']
-        return {products, cat}
+        
+        let products = await service.getProducts()
+        setProducts(products)
+        setProductsToDisplay(products)
+        
+        let cat = await service.getCategories()
+
+        setCategories(cat)
     }
 
     const filter = (category) => {
@@ -26,11 +31,7 @@ const Catalog = () => {
     }
 
     useEffect(() => {
-        const {products, cat} = loadCatalog()
-
-        setProducts(products)
-        setProductsToDisplay(products)
-        setCategories(cat)
+        loadCatalog()
     }, [])
     
     return (
@@ -46,14 +47,14 @@ const Catalog = () => {
             </button>
             {categories.length > 0
                 ? categories.map((cat, index) => (
-                      <button
-                          key={index}
-                          onClick={() => filter(cat)}
-                          className="btn btn-sm btn-info m-2"
-                      >
-                          {cat}
-                      </button>
-                  ))
+                        <button
+                            key={index}
+                            onClick={() => filter(cat)}
+                            className="btn btn-sm btn-info m-2"
+                        >
+                            {cat}
+                        </button>
+                    ))
                 : ""}
             <br />
             <br />

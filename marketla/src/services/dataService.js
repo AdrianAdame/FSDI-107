@@ -1,3 +1,6 @@
+import axios from "axios"
+
+
 //At least 8 products
 const catalog = [
     {
@@ -45,8 +48,28 @@ const catalog = [
 ]
 
 class DataService {
-    getProducts = () => {
-        return catalog
+    serverURL = "http://127.0.0.1:5000"
+
+    getProducts = async () => {
+        //Uncomment next line to work with local data
+        //return catalog
+
+        //Call the server
+        const response = await axios.get(this.serverURL + "/api/products")
+
+        return response.data
+    }
+
+    getCategories = async () => {
+        const response = await axios.get(this.serverURL + "/api/categories")
+
+        return response.data
+    }
+
+    saveProduct = async (prod) => {
+        const response = await axios.post(this.serverURL + "/api/products", prod)
+
+        return response.data
     }
 }
 
